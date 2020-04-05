@@ -1,0 +1,15 @@
+# configures a web server
+- name: apply webserver config to server
+  hosts: webserver
+  user: "{{ deploy_user }}"
+  roles:
+    - common
+    - webserver
+
+
+- name: apply databaseserver config to server
+  hosts: database
+  user: "{{ deploy_user }}"
+  roles:
+    - common
+    - database
